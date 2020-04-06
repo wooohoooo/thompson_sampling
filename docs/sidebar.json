@@ -1,10 +1,10 @@
 {
-  "Notebook": {
-    "Export to modules": "/export",
-    "Convert to html": "/export2html",
-    "Show doc": "/showdoc",
-    "Test functions": "/test",
-    "Core functions": "/core",
-    "Command line functions": "/cli"
+  "thompson_sampling_edu": {
+    "Overview": "/",
+    "abstractions": "/abstractions",
+    "multi_armed_bandits": "/multi_armed_bandits",
+    "models": "/models",
+    "ensembles": "/ensembles",
+    "solvers": "/solvers"
   }
 }
