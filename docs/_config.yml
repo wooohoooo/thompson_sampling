@@ -60,5 +60,10 @@ sidebars:
 - home_sidebar
 permalink: pretty
 
+<<<<<<< HEAD
 theme: jekyll-theme-cayman
 baseurl: /thompson_sampling/
+=======
+theme: jekyll-theme-minimal
+baseurl: /thompson_sampling_edu/
+>>>>>>> 19695ea3de8543ef1e7dda269f2f44567b1eff54
