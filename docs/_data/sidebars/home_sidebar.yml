@@ -25,6 +25,6 @@ entries:
       title: solvers
       url: /solvers
     output: web
-    title: thompson_sampling_edu
+    title: thompson_sampling
   output: web
   title: Sidebar

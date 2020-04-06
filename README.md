@@ -13,11 +13,11 @@ This file will become your README and also the index of your documentation.
 Fill me in please! Don't forget code examples:
 
 ```python
-from thompson_sampling_edu.multi_armed_bandits import non_contextual_categorical_customer_reaction
+from thompson_sampling.multi_armed_bandits import non_contextual_categorical_customer_reaction
 ```
 
 ```python
-from thompson_sampling_edu.solvers import BetaBandit
+from thompson_sampling.solvers import BetaBandit
 ```
 
 ```python
@@ -86,4 +86,16 @@ notebook2script()
     Converted 03_ensembles.ipynb.
     Converted 04_solvers.ipynb.
     Converted index.ipynb.
+
+
+```python
+! nbdev_build_docs
+```
+
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/04_solvers.ipynb
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/index.ipynb
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/01_multi_armed_bandits.ipynb
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/03_ensembles.ipynb
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/02_models.ipynb
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/00_abstractions.ipynb
 

@@ -18,8 +18,8 @@ modules = ["abstractions.py",
            "ensembles.py",
            "solvers.py"]
 
-doc_url = "https://Thomas Rost.github.io/thompson_sampling_edu/"
+doc_url = "https://Thomas Rost.github.io/thompson_sampling/"
 
-git_url = "https://github.com/Thomas Rost/thompson_sampling_edu/tree/master/"
+git_url = "https://github.com/Thomas Rost/thompson_sampling/tree/master/"
 
 def custom_doc_links(name): return None

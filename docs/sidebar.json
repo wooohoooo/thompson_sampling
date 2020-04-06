@@ -1,5 +1,5 @@
 {
-  "thompson_sampling_edu": {
+  "thompson_sampling": {
     "Overview": "/",
     "abstractions": "/abstractions",
     "multi_armed_bandits": "/multi_armed_bandits",
