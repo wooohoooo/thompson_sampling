@@ -5,6 +5,7 @@
     "multi_armed_bandits": "/multi_armed_bandits",
     "models": "/models",
     "ensembles": "/ensembles",
-    "solvers": "/solvers"
+    "solvers": "/solvers",
+    "helpers": "/helpers"
   }
 }

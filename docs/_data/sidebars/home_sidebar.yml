@@ -24,6 +24,9 @@ entries:
     - output: web,pdf
       title: solvers
       url: /solvers
+    - output: web,pdf
+      title: helpers
+      url: /helpers
     output: web
     title: thompson_sampling
   output: web

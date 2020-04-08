@@ -15,9 +15,10 @@ class AbstractSolver(object):
 
 # Cell
 class AbstractContextualSolver(object):
-    def __init__(self, model, num_arms):
-        self.model = model
+    def __init__(self, model_type, num_arms, num_context):
+        self.model_list = [model_type(num_context) for x in range(num_arms)]
         self.num_arms = num_arms
+        self.num_context = num_context
 
 
     def choose_arm(self,context):
