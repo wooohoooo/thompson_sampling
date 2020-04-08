@@ -27,6 +27,9 @@ entries:
     - output: web,pdf
       title: helpers
       url: /helpers
+    - output: web,pdf
+      title: Title
+      url: /noncontextual_bandits
     output: web
     title: thompson_sampling
   output: web

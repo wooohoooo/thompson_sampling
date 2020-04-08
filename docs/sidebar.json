@@ -6,6 +6,7 @@
     "models": "/models",
     "ensembles": "/ensembles",
     "solvers": "/solvers",
-    "helpers": "/helpers"
+    "helpers": "/helpers",
+    "Title": "/noncontextual_bandits"
   }
 }

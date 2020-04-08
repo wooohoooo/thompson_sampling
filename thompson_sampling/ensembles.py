@@ -7,6 +7,7 @@ __all__ = ['VanillaEnsemble', 'OnlineBootstrapEnsemble']
 import torch
 from torch.autograd import Variable
 import random
+import numpy as np
 
 class VanillaEnsemble(object):
     def __init__(self,model_type,dim_input, num_hidden = 10, p=0.00, decay=0.001, non_linearity=torch.nn.LeakyReLU, n_models=10, model_list=None):

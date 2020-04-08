@@ -54,7 +54,7 @@ bb = BetaBandit()
 y_optimal_list = []
 y_hat_list= []
 for i in range(250):
-    if i in [0,1,2,5,10,50,75,250]:
+    if i in [1,5,10,75,250]:
         plt.figure()
         arm = bb.choose_arm_and_plot()
     else:
@@ -82,18 +82,6 @@ for i in range(250):
 
 
 ![png](docs/images/output_12_3.png)
-
-
-
-![png](docs/images/output_12_4.png)
-
-
-
-![png](docs/images/output_12_5.png)
-
-
-
-![png](docs/images/output_12_6.png)
 
 
 ```python
@@ -155,7 +143,7 @@ plt.scatter(X,np.array(y_hat_list),c=range(len(y_hat_list)))
         }
     </style>
   <progress value='1500' class='' max='1500' style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [1500/1500 00:05<00:00]
+  100.00% [1500/1500 00:03<00:00]
 </div>
 
 
@@ -163,7 +151,7 @@ plt.scatter(X,np.array(y_hat_list),c=range(len(y_hat_list)))
 
 
 
-    <matplotlib.collections.PathCollection at 0x7f617e375610>
+    <matplotlib.collections.PathCollection at 0x7f0f52ba1c90>
 
 
 
@@ -265,7 +253,7 @@ plt.scatter(X,np.array(y_hat_list),c=range(len(y_hat_list)))
 
 
 
-    <matplotlib.collections.PathCollection at 0x7f617e35ec90>
+    <matplotlib.collections.PathCollection at 0x7f0f5018ba50>
 
 
 
@@ -295,6 +283,8 @@ notebook2script()
     Converted 03_ensembles.ipynb.
     Converted 04_solvers.ipynb.
     Converted 99_helpers.ipynb.
+    Converted Noncontextual_bandits.ipynb.
+    Converted contextual_bandits.ipynb.
     Converted index.ipynb.
 
 
@@ -302,7 +292,314 @@ notebook2script()
 ! nbdev_build_docs
 ```
 
-    converting: /home/thomas/Documents/GitHub/thompson_sampling/index.ipynb
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/contextual_bandits.ipynb
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.99434D-01    |proj g|=  7.92917D-02
+    
+    At iterate    1    f=  6.93147D-01    |proj g|=  0.00000D+00
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      1      3      1     0     0   0.000D+00   6.931D-01
+      F =  0.69314718055994529     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.93147D-01    |proj g|=  0.00000D+00
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      0      1      0     0     0   0.000D+00   6.931D-01
+      F =  0.69314718055994529     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.93147D-01    |proj g|=  0.00000D+00
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      0      1      0     0     0   0.000D+00   6.931D-01
+      F =  0.69314718055994529     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.93147D-01    |proj g|=  0.00000D+00
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      0      1      0     0     0   0.000D+00   6.931D-01
+      F =  0.69314718055994529     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.93147D-01    |proj g|=  2.06845D+00
+    
+    At iterate    1    f=  5.91858D-01    |proj g|=  1.08896D-02
+    
+    At iterate    2    f=  5.91855D-01    |proj g|=  5.88083D-05
+    
+    At iterate    3    f=  5.91855D-01    |proj g|=  2.47834D-09
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      3      5      1     0     0   2.478D-09   5.919D-01
+      F =  0.59185508486806593     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.67717D-01    |proj g|=  2.55916D-01
+    
+    At iterate    1    f=  6.66147D-01    |proj g|=  8.65716D-06
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      1      3      1     0     0   8.657D-06   6.661D-01
+      F =  0.66614706612568608     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.93147D-01    |proj g|=  0.00000D+00
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      0      1      0     0     0   0.000D+00   6.931D-01
+      F =  0.69314718055994529     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  5.85321D-01    |proj g|=  9.18341D-01
+    
+    At iterate    1    f=  5.66241D-01    |proj g|=  1.70708D-03
+    
+    At iterate    2    f=  5.66241D-01    |proj g|=  4.97163D-07
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      2      4      1     0     0   4.972D-07   5.662D-01
+      F =  0.56624092975747142     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.93147D-01    |proj g|=  0.00000D+00
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      0      1      0     0     0   0.000D+00   6.931D-01
+      F =  0.69314718055994529     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    RUNNING THE L-BFGS-B CODE
+    
+               * * *
+    
+    Machine precision = 2.220D-16
+     N =            1     M =           10
+     This problem is unconstrained.
+    
+    At X0         0 variables are exactly at the bounds
+    
+    At iterate    0    f=  6.80233D-01    |proj g|=  8.44645D-02
+    
+    At iterate    1    f=  6.80071D-01    |proj g|=  3.35521D-08
+    
+               * * *
+    
+    Tit   = total number of iterations
+    Tnf   = total number of function evaluations
+    Tnint = total number of segments explored during Cauchy searches
+    Skip  = number of BFGS updates skipped
+    Nact  = number of active bounds at final generalized Cauchy point
+    Projg = norm of the final projected gradient
+    F     = final function value
+    
+               * * *
+    
+       N    Tit     Tnf  Tnint  Skip  Nact     Projg        F
+        1      1      3      1     0     0   3.355D-08   6.801D-01
+      F =  0.68007071329349689     
+    
+    CONVERGENCE: NORM_OF_PROJECTED_GRADIENT_<=_PGTOL            
+    Warning: Some of your Notebooks use the same title (['abstractions', 'multi_armed_bandits', 'models', 'ensembles', 'solvers', 'helpers', 'Title', 'Title']).
     converting /home/thomas/Documents/GitHub/thompson_sampling/index.ipynb to README.md
 
 
