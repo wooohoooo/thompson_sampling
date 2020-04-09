@@ -103,7 +103,7 @@ class BetaBandit(AbstractSolver):
         self.trials[arm] = self.trials[arm] +1
         #count number of successes on that arm"""
 
-        # self.successes = self.successes *.99
+        # for decay factors: self.successes = self.successes *.99
         if success:
             self.successes[arm] = self.successes[arm]+ 1
 
@@ -112,8 +112,7 @@ class BetaBandit(AbstractSolver):
 
 
 
-# Helper functions, non essential
-
+# helpers
 
     def choose_arm_and_plot(self):
 
@@ -184,20 +183,26 @@ class LogisticThompsonSampler(AbstractContextualSolver):
         model.observe(X.reshape(-1,1), reward.reshape(-1,1))
 
     def choose_arm(self,context):
-      reward_list = []
+        reward_list = []
 
-      for arm in range(self.num_arms):
-        model = self.model_list[arm]
-        X = np.atleast_2d(context)
-
-
-        reward_sample = model.predict_proba(X)[0][0][0]
-        #print(reward_sample)
-        reward_list += [reward_sample]
-        #print(f'reward_list {reward_list}')
+        for arm in range(self.num_arms):
+            model = self.model_list[arm]
+            X = np.atleast_2d(context)
 
 
-      return np.argmax(reward_list)
+            reward_sample = model.predict_proba(X)[0][0][0]
+            reward_list += [reward_sample]
+
+
+        return np.argmax(reward_list)
+
+
+
+
+
+
+
+# helpers
 
     def plot_params(self):
         colors = iter(cm.rainbow(np.linspace(0, 1, self.num_arms)))

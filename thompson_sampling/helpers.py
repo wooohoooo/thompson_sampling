@@ -32,7 +32,7 @@ def plot_regret(y_optimal_list,y_hat_list):
     plt.plot(regret)
 
 
-def showcase_code(pyfile,class_name = False, method_name = False):
+def showcase_code(pyfile,class_name = False, method_name = False, end_string = False):
     """shows content of py file"""
 
 
@@ -46,7 +46,6 @@ def showcase_code(pyfile,class_name = False, method_name = False):
 
         #2. find end (class (new class!) or end of script)
         end_index = code[7:].find('class')
-        code = code[:end_index]
 
     if method_name:
         #1. find beginning (class + <name>)
@@ -55,8 +54,12 @@ def showcase_code(pyfile,class_name = False, method_name = False):
 
         #2. find end (class (new class!) or end of script)
         end_index = code[7:].find('def')
-        code = code[:end_index]
 
+
+    if end_string:
+        end_index = code[7:].find('# helpers')
+
+    code = code[:end_index]
 
     formatter = HtmlFormatter()
     return IPython.display.HTML('<style type="text/css">{}</style>{}'.format(
