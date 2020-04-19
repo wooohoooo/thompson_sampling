@@ -8,7 +8,6 @@ import numpy as np
 import scipy.stats as stats
 
 
-
 # Cell
 def non_contextual_categorical_bandit(choice:int, theta:np.array)->bool:
 
@@ -22,8 +21,11 @@ def non_contextual_categorical_bandit(choice:int, theta:np.array)->bool:
 
 # Cell
 def contextual_categorical_bandit(context:np.array, choice:int, theta:np.array, noise:float):
+    y = 0
 
-    y = theta[choice] * context
+    for dim in np.atleast_1d(context):
+        y+= theta[choice] * dim
+
     p = 1/(1+np.exp(-y))
 
     return np.random.choice([0,1],p=[1-p,p]), max(theta) - p, p

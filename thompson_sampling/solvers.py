@@ -177,10 +177,15 @@ class LogisticThompsonSampler(AbstractContextualSolver):
 
 
     def update(self,arm,context,reward):
+
         model = self.model_list[arm]
-        X =  np.atleast_2d(np.append(arm, context))
-        reward = np.atleast_2d(reward).T
-        model.observe(X.reshape(-1,1), reward.reshape(-1,1))
+        #X =  np.atleast_1d(np.append(arm, context))
+        X = np.atleast_2d(context)
+        # print(f'X {X}')
+
+        reward = np.atleast_1d(reward)
+        #model.observe(X.reshape(1,-1), reward.reshape(1,-1))
+        model.observe(X, reward)
 
     def choose_arm(self,context):
         reward_list = []
@@ -189,9 +194,14 @@ class LogisticThompsonSampler(AbstractContextualSolver):
             model = self.model_list[arm]
             X = np.atleast_2d(context)
 
+            probas = model.predict_proba(X)
 
-            reward_sample = model.predict_proba(X)[0][0][0]
+            reward_sample = probas[0][1]
+
+            # print(reward_sample)
+
             reward_list += [reward_sample]
+
 
 
         return np.argmax(reward_list)
@@ -229,10 +239,10 @@ class LogisticThompsonSampler(AbstractContextualSolver):
 
         for arm in range(self.num_arms):
             model = self.model_list[arm]
-            X = np.atleast_2d(context)
+            X = np.atleast_1d(context)
 
 
-            reward_sample = model.predict_proba(X)[0][0][0]
+            reward_sample = model.predict_proba(X)[0]
             reward_list += [reward_sample]
 
             # plot
