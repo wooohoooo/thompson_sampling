@@ -7,7 +7,8 @@ from .multi_armed_bandits import contextual_categorical_bandit, contextual_categ
 import matplotlib.pyplot as plt
 import numpy as np
 
-
+%load_ext autoreload
+%autoreload 2
 
 # Cell
 from scipy.optimize import minimize

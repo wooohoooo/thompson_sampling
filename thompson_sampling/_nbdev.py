@@ -2,7 +2,9 @@
 
 __all__ = ["index", "modules", "custom_doc_links", "git_url"]
 
-index = {"AbstractSolver": "00_abstractions.ipynb",
+index = {"AbstractNoncontextualMAB": "00_abstractions.ipynb",
+         "AbstractContextualMAB": "00_abstractions.ipynb",
+         "AbstractSolver": "00_abstractions.ipynb",
          "AbstractContextualSolver": "00_abstractions.ipynb",
          "non_contextual_categorical_bandit": "01_multi_armed_bandits.ipynb",
          "contextual_categorical_bandit": "01_multi_armed_bandits.ipynb",

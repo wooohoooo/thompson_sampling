@@ -6,6 +6,7 @@ __all__ = ['non_contextual_categorical_bandit', 'contextual_categorical_bandit',
 # Cell
 import numpy as np
 import scipy.stats as stats
+from .abstractions import AbstractContextualMAB
 
 
 # Cell
@@ -26,7 +27,7 @@ def contextual_categorical_bandit(context:np.array, choice:int, theta:np.array, 
     for dim in np.atleast_1d(context):
         y+= theta[choice] * dim
 
-    p = 1/(1+np.exp(-y))
+    p = sigmoid(y)
 
     return np.random.choice([0,1],p=[1-p,p]), max(theta) - p, p
 
