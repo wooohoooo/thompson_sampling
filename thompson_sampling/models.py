@@ -52,6 +52,13 @@ class OnlineLogisticRegression:
     # fitting method
     def fit(self, X, y):
 
+#         print(X)
+
+#         print(f'X {X.shape}')
+#         print(f'y {y.shape}')
+#         print(f'self w {self.w.shape}')
+#         print(f'self m {self.m.shape}')
+
         # step 1, find w
         self.w = minimize(self.loss, self.w, args=(X, y), jac=self.grad, method="L-BFGS-B", options={'maxiter': 20, 'disp':True}).x
         self.m = self.w
@@ -62,7 +69,7 @@ class OnlineLogisticRegression:
 
 
     def observe(self,X,y):
-      self.fit(X,y)
+        self.fit(X,y)
 
     # probability output method, using weights sample
     def predict_proba(self, X, mode='sample'):
@@ -82,6 +89,11 @@ class OnlineLogisticRegression:
             raise Exception('mode not recognized!')
 
 
+        X = np.atleast_1d(X)
+        w = np.atleast_1d(w)
+        #print(f'X shape {X.shape}')
+        #print(f'w shape {w.shape}')
+
         # calculating probabilities
         proba = 1 / (1 + np.exp(-1 * X.dot(w)))
         return np.array([1-proba , proba]).T
@@ -98,15 +110,15 @@ class BayesLinReg(object):
 
     self.B = np.eye(num_features)
     self.Binv = np.linalg.inv(self.B)
-    self.f = np.atleast_2d(np.zeros(num_features))
+    self.f = np.atleast_1d(np.zeros(num_features))
     self.v = v
 
     self.mu = np.zeros(num_features)
 
   def add_intercept(self,X):
     if self.intercept:
-      X = np.insert(np.atleast_2d(X),0,1)
-    X = np.atleast_2d(X)
+      X = np.insert(np.atleast_1d(X),0,1)
+    X = np.atleast_1d(X)
 
     return X.T
 

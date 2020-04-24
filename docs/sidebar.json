@@ -7,6 +7,9 @@
     "ensembles": "/ensembles",
     "solvers": "/solvers",
     "helpers": "/helpers",
-    "Title": "/noncontextual_bandits"
+    "Title": "/contextual_bandits",
+    "noncontextual_bandits": "/noncontextual_bandits",
+    "nonlinear_bandits_numerical": "/nonlinear_bandits-Copy1",
+    "nonlinear_bandits": "/nonlinear_bandits"
   }
 }
