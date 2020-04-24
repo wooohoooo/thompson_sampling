@@ -91,7 +91,7 @@ class NonlinearContextualNumericalBandit(AbstractContextualMAB):
 
     def get_reward(self, choice, context):
         p = self.get_probability(choice, context)
-        return np.random.choice([0,1],p=[1-p,p]), max(self.theta) - p, p
+        return y#np.random.choice([0,1],p=[1-p,p]), max(self.theta) - p, p
 
     def get_optimal_arm(self, context):
         arm_ps = []
