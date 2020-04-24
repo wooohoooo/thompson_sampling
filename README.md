@@ -143,7 +143,7 @@ plt.scatter(X,np.array(y_hat_list),c=range(len(y_hat_list)))
         }
     </style>
   <progress value='1500' class='' max='1500', style='width:300px; height:20px; vertical-align: middle;'></progress>
-  100.00% [1500/1500 00:08<00:00]
+  100.00% [1500/1500 00:07<00:00]
 </div>
 
 
@@ -151,7 +151,7 @@ plt.scatter(X,np.array(y_hat_list),c=range(len(y_hat_list)))
 
 
 
-    <matplotlib.collections.PathCollection at 0x7fa0a4b42040>
+    <matplotlib.collections.PathCollection at 0x7f13fc5549a0>
 
 
 
@@ -248,7 +248,7 @@ plt.scatter(X,np.array(y_hat_list),c=range(len(y_hat_list)))
 
 
 
-    <matplotlib.collections.PathCollection at 0x7fa0527cb070>
+    <matplotlib.collections.PathCollection at 0x7f13f8b39d60>
 
 
 
@@ -306,9 +306,9 @@ notebook2script()
 ! nbdev_build_docs
 ```
 
-    converting: /home/thomas/Documents/GitHub/thompson_sampling/nonlinear_bandits.ipynb
     converting: /home/thomas/Documents/GitHub/thompson_sampling/nonlinear_bandits-Copy1.ipynb
-    Warning: Some of your Notebooks use the same title (['abstractions', 'multi_armed_bandits', 'models', 'ensembles', 'solvers', 'helpers', 'Title', 'Title', 'nonlinear_bandits_numerical', 'nonlinear_bandits']).
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/index.ipynb
+    converting: /home/thomas/Documents/GitHub/thompson_sampling/noncontextual_bandits.ipynb
     converting /home/thomas/Documents/GitHub/thompson_sampling/index.ipynb to README.md
 
 
