@@ -2,7 +2,7 @@
 
 __all__ = ['sigmoid', 'non_contextual_categorical_bandit', 'contextual_categorical_bandit',
            'contextual_categorical_get_optimal_arm', 'NonlinearContextualCategoricalBandit',
-           'contextual_numerical_bandit']
+           'contextual_numerical_bandit', 'NonlinearContextualNumericalBandit']
 
 # Cell
 import numpy as np
@@ -49,7 +49,7 @@ class NonlinearContextualCategoricalBandit(AbstractContextualMAB):
         y = 0 #self.theta[choice]
 
         for dim in np.atleast_1d(context):
-            y+= np.sin(self.theta[choice] * (dim+1) + dim +  np.random.normal(0,self.noise))
+            y+= np.sin(self.theta[choice] * (dim+1)/2 + dim +  np.random.normal(0,self.noise))
 
         return self.activation(y)
 
@@ -77,3 +77,25 @@ def contextual_numerical_bandit(context:np.array, choice:int, theta:np.array, no
 
 
     return y
+
+# Cell
+class NonlinearContextualNumericalBandit(AbstractContextualMAB):
+
+    def get_probability(self, choice, context):
+        y = 0 #self.theta[choice]
+
+        for dim in np.atleast_1d(context):
+            y+= np.sin(self.theta[choice] * (dim+1)/2 + dim +  np.random.normal(0,self.noise))
+
+        return self.activation(y)
+
+    def get_reward(self, choice, context):
+        p = self.get_probability(choice, context)
+        return np.random.choice([0,1],p=[1-p,p]), max(self.theta) - p, p
+
+    def get_optimal_arm(self, context):
+        arm_ps = []
+        for i in range(self.num_arms):
+            arm_ps.append(self.get_probability(i, context))
+
+        return np.argmax(arm_ps)
