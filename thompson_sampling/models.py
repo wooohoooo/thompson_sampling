@@ -138,7 +138,7 @@ class BayesLinReg:
     @property
     def weights_dist(self):
         cov = np.linalg.inv(self.cov_inv)
-        return stats.multivariate_normal(mean=model.mean, cov=cov)
+        return stats.multivariate_normal(mean=self.mean, cov=cov)
 
 
 class BatchBayesLinReg(BayesLinReg):
