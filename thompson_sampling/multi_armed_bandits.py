@@ -2,7 +2,7 @@
 
 __all__ = ['sigmoid', 'non_contextual_categorical_bandit', 'contextual_categorical_bandit',
            'contextual_categorical_get_optimal_arm', 'NonlinearContextualCategoricalBandit',
-           'contextual_numerical_bandit', 'NonlinearContextualNumericalBandit']
+           'contextual_numerical_bandit', 'contextual_numerical_get_optimal_arm', 'NonlinearContextualNumericalBandit']
 
 # Cell
 import numpy as np
@@ -77,6 +77,13 @@ def contextual_numerical_bandit(context:np.array, choice:int, theta:np.array, no
 
 
     return y
+
+
+
+def contextual_numerical_get_optimal_arm(context):
+    if context < 0:
+        return 1
+    return 0
 
 # Cell
 class NonlinearContextualNumericalBandit(AbstractContextualMAB):
