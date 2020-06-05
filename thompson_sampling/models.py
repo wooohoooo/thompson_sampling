@@ -110,7 +110,7 @@ class BayesLinReg:
         self.mean = np.zeros(n_features)
         self.cov_inv = np.identity(n_features) / alpha
 
-    def learn(self, x, y):
+    def observe(self, x, y):
 
         # Update the inverse covariance matrix (Bishop eq. 3.51)
         cov_inv = self.cov_inv + self.beta * np.outer(x, x)
@@ -123,6 +123,10 @@ class BayesLinReg:
         self.mean = mean
 
         return self
+
+    def learn(self,X,y):
+        "until refactoring..."
+        self.observe(X,y)
 
     def predict(self, x):
 
@@ -143,7 +147,7 @@ class BayesLinReg:
 
 class BatchBayesLinReg(BayesLinReg):
 
-    def learn(self, x, y):
+    def observe(self, x, y):
 
         # If x and y are singletons, then we coerce them to a batch of length 1
         x = np.atleast_2d(x)
@@ -160,6 +164,11 @@ class BatchBayesLinReg(BayesLinReg):
         self.mean = mean
 
         return self
+
+    def learn(self,X,y):
+        "until refactoring..."
+
+        self.observe(X,y)
 
     def predict(self, x):
 
