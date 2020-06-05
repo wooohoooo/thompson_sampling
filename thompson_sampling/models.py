@@ -3,7 +3,7 @@
 __all__ = ['OnlineLogisticRegression', 'BayesLinReg', 'SimpleModel']
 
 # Cell
-from .multi_armed_bandits import contextual_categorical_bandit, contextual_categorical_get_optimal_arm
+from .multi_armed_bandits import contextual_categorical_bandit, contextual_categorical_get_optimal_arm, contextual_numerical_bandit
 import matplotlib.pyplot as plt
 import numpy as np
 
