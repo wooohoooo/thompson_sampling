@@ -34,9 +34,6 @@ entries:
       title: noncontextual_bandits
       url: /noncontextual_bandits
     - output: web,pdf
-      title: nonlinear_bandits_numerical
-      url: /nonlinear_bandits-Copy1
-    - output: web,pdf
       title: nonlinear_bandits
       url: /nonlinear_bandits
     output: web
