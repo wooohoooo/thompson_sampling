@@ -313,7 +313,9 @@ class GaussianBandit(AbstractSolver):
 
             sampled_outcomes += [sampled_outcome]
 
-        return(sampled_outcomes.index(max(sampled_outcomes)))
+        return np.argmax(sampled_outcomes)
+
+        #return(sampled_outcomes.argmax(sampled_outcomes))
 
     def update(self, arm, outcome):
         """update parameters of specific arm"""
